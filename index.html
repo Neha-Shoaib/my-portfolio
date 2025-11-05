@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neha Shoaib-Portfolio</title>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
@@ -50,12 +51,12 @@
                     </svg>
                 </button>
                 <div class="contact-links">
-                    <a href="https://github.com/Neha-Shoaib/">
+                    <a href="https://github.com/Neha-Shoaib/" target="_blank">
                         <img src="assets/github.png" alt="github_logo" class="contact-link"></a>
-                    <a href="https://www.linkedin.com/in/neha-shoaib-a94539306/"><img src="assets/linkedIn.png"
-                            alt="linkedIn" class="contact-link">
+                    <a href="https://www.linkedin.com/in/neha-shoaib-a94539306/" target="_blank"><img
+                            src="assets/linkedIn.png" alt="linkedIn" class="contact-link">
                     </a>
-                    <a href="mailto:thisisnehashoaib@gmail.com"><img src="assets/gmail.png" alt="gmail"
+                    <a href="mailto:thisisnehashoaib@gmail.com" target="_blank"><img src="assets/gmail.png" alt="gmail"
                             class="contact-link"></a>
                 </div>
             </div>
@@ -173,9 +174,138 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Section -->
+    <section class="project-section" id="project">
+        <h2>My Projects</h2>
+        <label for="project-filter" style="color: white; ">Filter by :</label>
+        <select name="projects" id="project-filter" style="margin-bottom: 20px;">
+            <option value="all">All</option>
+            <option value="html5 and css">HTML5 and CSS</option>
+            <option value="bootstrap">Bootstrap</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+        <div class="project-container">
+            <div class="projectCard" data-category="bootstrap">
+                <img src="assets/neha's_bakehouse.JPG" height="200px" alt="project-image">
+                <h3>Neha's Bakehouse</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/Neha-s-Bakehouse" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://neha-bakehouse.netlify.app/" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+            <div class="projectCard" data-category="javascript">
+                <img src="assets/to-do-list.JPG" height="200px" alt="project-image">
+                <h3>To-do List App</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/to-do-list-app-" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://todo-app-by-ns.netlify.app" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+            <div class="projectCard" data-category="bootstrap">
+                <img src="assets/the-city-school.JPG" height="200px" alt="project-image">
+                <h3>The city School</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/The-City-School-" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://thecityschoolweb.netlify.app" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+            <div class="projectCard" data-category="html5 and css">
+                <img src="assets/Little_Folks_School_img.JPG" height="200px" alt="project-image">
+                <h3>The Little Folk's School</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/Little_Folk-s_School" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://littlefolksschool.netlify.app" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+            <div class="projectCard" data-category="javascript">
+                <img src="assets/calculator.JPG" height="200px" alt="project-image">
+                <h3>The Calculator</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/Calculator" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://calculator-01js.netlify.app/" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+            <div class="projectCard" data-category="html5 and css">
+                <img src="assets/quiz-website.JPG" height="200px" alt="project-image">
+                <h3>A simple Quiz Website</h3>
+                <div class="preview-buttons">
+                    <a href="https://github.com/Neha-Shoaib/Quiz-Website" target="_blank">
+                        <button class="repository">Repository <span><img src="assets/github.png" alt=""
+                                    height="30px"></span></button>
+                    </a>
+                    <a href="https://basicquiz-website.netlify.app/" target="_blank">
+                        <button>Live Demo <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                viewBox="0 0 24 24" fill="none" stroke="#800080" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                                <path
+                                    d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <hr style="width: 75%; margin: auto;">
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <h2>Contact</h2>
 
         <form action="">
@@ -186,7 +316,7 @@
                 <input type="email" required>
                 <label for="message">Message</label>
                 <textarea name="message" required id="message" rows="10" cols="10"></textarea>
-                <button type="submit">Send a Message</button>
+                <button type="submit" class="contactButton">Send a Message</button>
             </fieldset>
         </form>
     </section>
@@ -196,7 +326,7 @@
             <p class="copyright">&copy; All rights reserved</p>
         </div>
         <ul class="footer-links">
-            <a href="">
+            <a href="#home">
                 <li>Home</li>
             </a>
             <a href="#about">
@@ -220,6 +350,35 @@
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+    const projectFilter = document.getElementById("project-filter");
+    const projects = document.querySelectorAll(".projectCard");
+    projectFilter.addEventListener("change", () => {
+        const selected = projectFilter.value;
+        projects.forEach(project => {
+            const priority = project.getAttribute("data-category");
+            if (selected === "all" || priority === selected) {
+                project.style.display = "inline-block";
+                setTimeout(() => project.classList.remove("hide"), 10);
+            }
+            else {
+                project.classList.add("hide");
+                setTimeout(() => {
+                    if (project.classList.contains("hide")) {
+                        project.style.display = "none";
+                    }
+                }, 400);
+            }
+        }
+        )
+    });
+    const downloadResume = document.querySelector(".downloadResume");
+    downloadResume.addEventListener("click", () => {
+        alert("you will be able to download soon 😁");
+    });
+    const contactButton = document.querySelector(".contactButton");
+    contactButton.addEventListener("click", () => {
+        alert("I'll contact you soon😊");
+    })
 </script>
 
 </html>

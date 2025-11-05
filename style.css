@@ -1,5 +1,5 @@
 :root {
-  --text-background-color: linear-gradient(to right, rgb(139, 21, 185), pink);
+  --text-background-color: linear-gradient(to right, rgb(139, 21, 185), rgb(179, 2, 99));
   --gradient-color: transparent;
   --white-color: white;
 }
@@ -16,16 +16,15 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to bottom, rgb(37, 1, 37), black);
-  box-shadow: 0 7px 50px rgba(143, 3, 171),
-    0 -2px 16px rgba(215, 10, 150);
-
+  background-color: #000000;
+  font-family: sans-serif;
+  width: auto;
 }
 
 nav,
 footer {
 
-  margin-top: 2rem;
+  padding-top: 2rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -58,7 +57,7 @@ footer {
 
 .nav-links a:hover,
 .footer-links a:hover {
-  background: var(--text-background-color);
+  background-image: var(--text-background-color);
   color: var(--gradient-color);
   -webkit-background-clip: text;
 }
@@ -90,7 +89,7 @@ ul a {
   width: 30px;
   padding: 5px;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .contactInfo {
@@ -101,12 +100,12 @@ ul a {
 .downloadResume {
   color: var(--white-color);
   border: none;
-
+  box-shadow: -5px 0 10px rgb(139, 21, 185), 5px 0 10px rgb(238, 43, 190);
   padding: 5px;
   margin-bottom: 20px;
   border-radius: 20px;
   line-height: 200%;
-  width: 30%;
+  width: 35%;
   background: var(--text-background-color);
 }
 
@@ -206,9 +205,10 @@ ul a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
   gap: 8rem;
+
 }
 
 .about-image {
@@ -221,17 +221,94 @@ ul a {
 }
 
 .about-section {
+  position: relative;
   padding: 4rem 2rem;
   color: var(--white-color);
 }
 
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle,
+      rgba(190, 17, 112, 0.852) 0%,
+      rgba(119, 26, 169, 0.376)40%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+
+}
+
+.project-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -120px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle,
+      rgba(190, 17, 112, 0.852) 0%,
+      rgba(119, 26, 169, 0.376)40%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.project-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -350px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(190, 17, 112, 0.8) 0%, rgba(119, 26, 169, 0.4) 70%, transparent 100%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
+  background-blend-mode: screen;
+
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: 150px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle,
+      rgba(190, 17, 112, 0.852) 0%,
+      rgba(119, 26, 169, 0.376)40%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+
+}
+
 .about-content {
   flex: 1;
+  width: 200px;
+}
+
+.about-section svg {
+  box-shadow: -5px 0 10px rgb(139, 21, 185), 5px 0 10px rgb(238, 43, 190);
+  ;
 }
 
 .about-content h3 {
   font-size: 2rem;
   padding-bottom: 10px;
+  color: transparent;
+  background: var(--text-background-color);
+  -webkit-background-clip: text;
 }
 
 .about-content p {
@@ -262,13 +339,13 @@ ul a {
 }
 
 .skills {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  padding: 1.5rem;
+  display: grid;
+  gap: 2rem;
   width: fit-content;
   border-radius: 20px;
   margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
 }
 
 .skill {
@@ -287,7 +364,7 @@ ul a {
 
 .skill-level {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .skill-level span {
@@ -330,21 +407,169 @@ ul a {
   box-shadow: 0 0 10px #ff7b00;
   transform: scale(1.2);
 }
+
 .skill-level-css span:hover {
   box-shadow: 0 0 10px #0d7ae7;
   transform: scale(1.2);
 }
+
 .skill-level-bootstrap span:hover {
   box-shadow: 0 0 10px #6d08e7;
   transform: scale(1.2);
 }
+
 .skill-level-js span:hover {
   box-shadow: 0 0 10px yellow;
   transform: scale(1.2);
 }
+
 .skill-level-react span:hover {
   box-shadow: 0 0 10px #2d69d0;
   transform: scale(1.2);
+}
+
+/* project Section */
+.project-section {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.project-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+}
+
+.filter-box {
+  margin-bottom: 30px;
+}
+
+#project-filter {
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  background-image: var(--text-background-color) !important;
+  border: none;
+  box-shadow: -5px 0 10px rgb(139, 21, 185), 5px 0 10px rgb(238, 43, 190);
+  color: white;
+  font-weight: bold;
+}
+
+option {
+  color: rgb(255, 255, 255);
+  background-color: purple;
+  border: none;
+  font-weight: bold;
+}
+
+option:hover {
+  background-color: white !important;
+  color: purple !important;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.projectCard {
+  width: 400px;
+  height: 300px;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: inline-block;
+  border: 1px solid peachpuff;
+}
+
+.projectCard.hide {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+}
+
+.projectCard h3 {
+  color: var(--white-color);
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.preview-buttons a button {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-image: var(--text-background-color);
+  border-image-slice: 1;
+  background-clip: text;
+  background-origin: content-box, bord;
+  -webkit-background-clip: text;
+  color: var(--gradient-color);
+  background-image: var(--text-background-color);
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+}
+
+.preview-buttons a button:hover {
+  background: var(--text-background-color);
+  border: 1px solid transparent;
+  border-image: var(--text-background-color);
+  border-image-slice: 1;
+  color: whitesmoke;
+  border-radius: 20px;
+  transition: all 1s ease;
+  border: none !important;
+}
+
+.preview-buttons a button:hover svg {
+  stroke: white;
+}
+
+.preview-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.repository img {
+  background-color: transparent;
+  background-image: var(--text-background-color);
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+button svg {
+  margin-left: 10px;
+}
+
+.projectCard>img {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+
 }
 
 /* Contact Form */
@@ -356,6 +581,7 @@ ul a {
 
 .contact-section {
   margin: 2rem auto;
+  position: relative;
 }
 
 fieldset {
@@ -364,7 +590,6 @@ fieldset {
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 80%;
   gap: 10px;
   margin: 1rem auto;
   border-radius: 10px;
@@ -379,6 +604,7 @@ fieldset button {
   width: 25%;
   width: 40%;
   margin-left: auto;
+  margin-bottom: 10%;
   padding: 10px 10px;
   border-radius: 10px;
 
@@ -388,7 +614,7 @@ form input,
 form textarea {
   border-radius: 5px;
   background-color: black;
-  border: 2px solid wheat;
+  border: 1px solid wheat;
   color: white;
   padding: 5px;
 }
@@ -516,9 +742,17 @@ footer .copyright {
 
   }
 
+  .about-content {
+    width: 400px;
+  }
+
   .skills {
-    align-items: center;
-    padding: 0;
+    grid-template-columns: repeat(1, 1fr) !important;
+
+  }
+
+  .skill-level {
+    gap: 0.5rem;
   }
 
   .footer-links {
@@ -527,7 +761,7 @@ footer .copyright {
   }
 
   fieldset {
-    width: 75%;
+    width: 60%;
   }
 
   fieldset button {
@@ -539,8 +773,19 @@ footer .copyright {
 
   .skill-section h2,
   .contact-section h2,
-  .about-heading {
+  .about-heading,
+  .project-section h2 {
     font-size: 2rem;
   }
-}
 
+  .projectCard {
+    width: 280px;
+    height: 300px;
+    padding: 20px;
+  }
+
+  .projectCard>img {
+    width: 240px;
+    height: auto;
+  }
+}
