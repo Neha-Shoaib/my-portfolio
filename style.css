@@ -152,7 +152,6 @@ ul a {
   animation: slideIn 1.2s ease-out forwards;
 }
 
-/* Animation keyframes */
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -669,7 +668,6 @@ footer .copyright {
   font-size: 1rem;
   margin-top: 20px;
 }
-/* ===== BASE ANIMATION STYLES ===== */
 .hidden {
   opacity: 0;
   transform: translateY(50px);
@@ -681,7 +679,6 @@ footer .copyright {
   transform: translateY(0);
 }
 
-/* ===== LEFT TO RIGHT (for hero text) ===== */
 .from-left.hidden {
   transform: translateX(-100px);
 }
@@ -690,7 +687,6 @@ footer .copyright {
   transform: translateX(0);
 }
 
-/* ===== RIGHT TO LEFT (for about section) ===== */
 .from-right.hidden {
   transform: translateX(100px);
 }
@@ -699,7 +695,6 @@ footer .copyright {
   transform: translateX(0);
 }
 
-/* ===== FADE UP (for cards, skills, etc.) ===== */
 .fade-up.hidden {
   transform: translateY(80px);
 }
@@ -708,7 +703,6 @@ footer .copyright {
   transform: translateY(0);
 }
 
-/* Small bounce for smoothness */
 .show {
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
