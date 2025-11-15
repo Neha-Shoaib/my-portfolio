@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neha Shoaib-Portfolio</title>
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
-</head>
 
+</head>
 <body>
     <nav class="navbar" id="home">
         <div class="logo">Neha &lt;/&gt;</div>
@@ -35,7 +37,7 @@
         </div>
     </nav>
     <div class="hero">
-        <div class="hero-text">
+        <div class="hero-text from-left hidden">
             <h1 id="hero-title">Hi, I'm Neha</h1>
             <h2 id="hero_subheading">Aspiring MERN Stack Developer</h2>
             <p id="description">Crafting modern, responsive, and user-friendly websites with passion and precision
@@ -63,7 +65,7 @@
         </div>
 
         <!-- Hero Section -->
-        <div class="hero-images">
+        <div class="hero-images fade-up hidden">
             <img src="assets/hero-image.png" alt="hero-image" class="hero-mainImage">
             <img src="assets/javascript.png" alt="js_logo" class="js ">
             <img src="assets/html5.png" alt="html_logo" class="html ">
@@ -73,14 +75,13 @@
 
 
     <!-- About Section -->
-    <h2 class="about-heading" id="about">About Me</h2>
+    <h2 class="about-heading from-right hidden" id="about">About Me</h2>
     <section class="about-section">
         <div class="about-container">
-            <div>
+            <div class="about-image">
                 <img src="assets/about-image.png" alt="about-image" class="about-image">
             </div>
-            <div class="about-content">
-
+            <div class="about-content hidden">
                 <h3>I'm Neha Shoaib</h3>
                 <p>Computer Systems Engineering Student at DUET and Aspiring MERN Stack Developer at SMIT</p>
                 <p>I build responsive front-end projects using HTML, CSS, and JavaScript, and I’m currently learning
@@ -130,10 +131,10 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skill-section" id="skills">
+    <section class="skill-section fade-up hidden" id="skills">
         <h2>My Skills</h2>
         <div class="skills">
-            <div class="skill">
+            <div class="skill fade-up hidden">
                 <img src="assets/html5.png" alt="HTML5" class="skill-icon">
                 <div class="skill-level skill-level-html">
                     <span></span><span></span><span></span><span></span><span></span>
@@ -141,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="skill">
+            <div class="skill fade-up hidden">
                 <img src="assets/bootstrap.png" alt="bootstrap" class="skill-icon">
                 <div class="skill-level  skill-level-bootstrap">
                     <span></span><span></span><span></span><span></span><span></span>
@@ -149,7 +150,7 @@
                 </div>
             </div>
 
-            <div class="skill">
+            <div class="skill fade-up hidden">
                 <img src="assets/css-3.png" alt="CSS3" class="skill-icon">
                 <div class="skill-level  skill-level-css">
                     <span></span><span></span><span></span><span></span><span></span>
@@ -157,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="skill">
+            <div class="skill fade-up hidden">
                 <img src="assets/javascript.png" alt="JavaScript" class="skill-icon">
                 <div class="skill-level  skill-level-js">
                     <span></span><span></span><span></span><span></span><span></span>
@@ -165,7 +166,7 @@
                 </div>
             </div>
 
-            <div class="skill">
+            <div class="skill fade-up hidden">
                 <img src="assets/react.png" alt="React" class="skill-icon">
                 <div class="skill-level  skill-level-react">
                     <span></span><span></span><span></span><span></span><span></span>
@@ -305,20 +306,21 @@
     </section>
     <hr style="width: 75%; margin: auto;">
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section fade-up hidden" id="contact">
         <h2>Contact</h2>
 
-        <form action="">
+        <form action="" id="form">
             <fieldset>
                 <label for="name">Name</label>
-                <input type="text" id="name" required>
+                <input type="text" name="user_name" id="name" required>
                 <label for="email">Email</label>
-                <input type="email" required>
+                <input type="email" name="user_email" required>
                 <label for="message">Message</label>
                 <textarea name="message" required id="message" rows="10" cols="10"></textarea>
                 <button type="submit" class="contactButton">Send a Message</button>
             </fieldset>
         </form>
+        <p id="successMsg" style="display:none; color:green; margin-top: 1rem; text-align: center;">Message sent Successfully!</p>
     </section>
     <!-- Footer -->
     <footer>
@@ -343,7 +345,6 @@
             </a>
         </ul>
     </footer>
-</body>
 <script>
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.querySelector('.hamburger');
@@ -373,12 +374,38 @@
     });
     const downloadResume = document.querySelector(".downloadResume");
     downloadResume.addEventListener("click", () => {
-        alert("you will be able to download soon 😁");
-    });
-    const contactButton = document.querySelector(".contactButton");
-    contactButton.addEventListener("click", () => {
-        alert("I'll contact you soon😊");
-    })
+ Swal.fire({
+  text: "You would be able to download it soon! 🙂",
+  confirmButtonText: "Okay"
+});
+  });
+    emailjs.init("I8lRRiKyj3rgAnbIq");
+    let form = document.querySelector("#form");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        emailjs.sendForm("service_dw22gnl","template_rscsgdq", this)
+        .then(()=>{
+            document.getElementById("successMsg").style.display="block";
+            form.reset();
+            setTimeout(()=>{
+                successMsg.style.display = "none"; 
+        }, 5000);
+        }, (error)=>{
+            console.error("error", error)
+            alert("Oops something went wrong");
+        })
+        });
+        const observer= new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{ threshold:0.2 });
+ const hiddenElements = document.querySelectorAll('.hidden');
+  hiddenElements.forEach(el => observer.observe(el));
 </script>
-
+</style>
+</body>
 </html>

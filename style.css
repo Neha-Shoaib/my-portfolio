@@ -1,3 +1,8 @@
+.swal2-confirm {
+  background-color: #a614b0 !important;
+  color: white !important;
+  border-radius: 10px !important;
+}
 :root {
   --text-background-color: linear-gradient(to right, rgb(139, 21, 185), rgb(179, 2, 99));
   --gradient-color: transparent;
@@ -116,6 +121,10 @@ ul a {
   color: var(--white-color);
 }
 
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 #hero_subheading {
   font-size: 2rem;
   background-image: var(--text-background-color);
@@ -140,6 +149,19 @@ ul a {
 .hero-text {
   width: 40%;
   text-align: left;
+  animation: slideIn 1.2s ease-out forwards;
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero-images {
@@ -223,7 +245,6 @@ ul a {
 .about-section {
   position: relative;
   padding: 4rem 2rem;
-  color: var(--white-color);
 }
 
 .about-section::before {
@@ -296,8 +317,22 @@ ul a {
 .about-content {
   flex: 1;
   width: 200px;
+animation: all 1.2s ease-out;
+color: white;
 }
-
+.hidden{
+   opacity: 0;
+ transform: translateX(100px);
+ transition: all 1s ease-out;
+}
+.show{
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-img{
+  opacity: 0;
+ transform: translateX(100px);
+}
 .about-section svg {
   box-shadow: -5px 0 10px rgb(139, 21, 185), 5px 0 10px rgb(238, 43, 190);
   ;
@@ -617,6 +652,7 @@ form textarea {
   border: 1px solid wheat;
   color: white;
   padding: 5px;
+  font-size: medium;
 }
 
 form input {
@@ -633,7 +669,49 @@ footer .copyright {
   font-size: 1rem;
   margin-top: 20px;
 }
+/* ===== BASE ANIMATION STYLES ===== */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LEFT TO RIGHT (for hero text) ===== */
+.from-left.hidden {
+  transform: translateX(-100px);
+}
+
+.from-left.show {
+  transform: translateX(0);
+}
+
+/* ===== RIGHT TO LEFT (for about section) ===== */
+.from-right.hidden {
+  transform: translateX(100px);
+}
+
+.from-right.show {
+  transform: translateX(0);
+}
+
+/* ===== FADE UP (for cards, skills, etc.) ===== */
+.fade-up.hidden {
+  transform: translateY(80px);
+}
+
+.fade-up.show {
+  transform: translateY(0);
+}
+
+/* Small bounce for smoothness */
+.show {
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
 /* --- Tablet and below --- */
 @media (max-width: 768px) {
   .logo {
@@ -661,6 +739,7 @@ footer .copyright {
     display: flex;
     animation: slideDown 0.4s ease;
     background: rgb(32, 1, 32);
+    z-index: 1;
   }
 
   @keyframes slideDown {
@@ -736,14 +815,14 @@ footer .copyright {
   }
 
   .about-image {
-    width: 80%;
+    width: 90%;
     max-width: 300px;
     height: auto;
-
+    padding: 0px;
   }
 
   .about-content {
-    width: 400px;
+    width: 260px;
   }
 
   .skills {
@@ -761,7 +840,7 @@ footer .copyright {
   }
 
   fieldset {
-    width: 60%;
+    width: 75%;
   }
 
   fieldset button {
